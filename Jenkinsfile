@@ -39,5 +39,13 @@ pipeline {
 	echo '$JOB_NAME'
       }
     }
+    stage('Clean up') {
+      steps {
+	echo 'Cleaning up temporary files...'
+        sh 'rm -rf temp logs'
+        sh 'ls -la'
+	echo 'Clean up completed'
+      }
+    }
   }
 } 
