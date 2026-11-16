@@ -27,5 +27,17 @@ pipeline {
 	echo 'Verification completed'
       }
     }
+    stage('System Info') {
+      steps {
+	echo '===System Information==='
+	echo 'Current user:'
+	sh 'whoami'
+	echo 'Disk Info:'
+	sh 'df -h .'
+	echo 'Jenkins Environment:'
+	echo'$BUILD_NUMBER'
+	echo '$JOB_NAME'
+      }
+    }
   }
 } 
